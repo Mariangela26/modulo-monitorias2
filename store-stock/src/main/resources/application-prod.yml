@@ -1,0 +1,38 @@
+server:
+  #aqui se debe cambiar el puerto, por el especifico de cada micro
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    showSql: true
+    ddlAuto: create
+
+spring.messages.basename: lang/messages
+spring.messages.encoding: UTF-8
+
+jwt:
+  secretKey: ${KEYSECRET_SECURITY:SjLNct19ONkWJIw4OW4EFz8V8KUNLiQ9CU_We2nUsLg}
+  prefix: ${PREFIX_SECURITY:Bearer}
+  expiraInDays: ${EXPIRA_DAYS_SECURITY:14}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: info
+
+feign:
+  module:
+    infoSenioritys: ${URL_MODULE_APPSCRIPT:https://script.google.com/macros/s/AKfycbzLdvdRZnJ4aOddEEmRFG3ncxLrqzzjYdVC33hPNU-gy7LHg3xcdkjHSYyhsFK-4aRNkw/exec}
+    infoChapterMonths: ${URL_MODULE_APPSCRIPT:https://script.google.com/macros/s/AKfycbwaR-I82y3Rm3BPC0hlx66l5SLABDy_GE2526E27JpePyVBAyDzDvwmaooygp9SN2en6w/exec}
+    perfil: ${URL_MODULE_PERFIL:https://s6z0b43euf.execute-api.us-east-1.amazonaws.com/dev/pragma/perfil/}
+    usersChapter: ${URL_MODULE_APPSCRIPT:https://script.google.com/macros/s/AKfycby93rjRHiyfDBQSytNi22Q6gSyjkuhHngggqTQvHpz2C_pacYQBn17r4ubtu9MVMV-uMQ/exec}

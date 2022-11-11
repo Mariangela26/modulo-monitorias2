@@ -1,0 +1,39 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: map-api
+  namespace: crecimiento-develop
+  labels:
+    app: map-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: map-api
+  template:
+    metadata:
+      name: map-api
+      labels:
+        app: map-api
+    spec:
+      containers:
+        - name: map-api
+          image: 298782619489.dkr.ecr.us-east-1.amazonaws.com/pragma/mapa-crecimiento/talent:latest
+          resources:
+            requests:
+              memory: "400Mi"
+              cpu: "100m"
+            limits:
+              memory: "500Mi"
+              cpu: "200m"
+          imagePullPolicy: Always
+          env:
+            - name: PROFILE
+              value: prod
+
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+  strategy:
+    type: Recreate

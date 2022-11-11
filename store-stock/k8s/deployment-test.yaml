@@ -1,0 +1,218 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: vacaciones-api
+  namespace: BRANCH_NAME
+  labels:
+    app: vacaciones-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vacaciones-api
+  template:
+    metadata:
+      name: vacaciones-api
+      labels:
+        app: vacaciones-api
+    spec:
+      containers:
+        - name: vacaciones-api
+          image: IMAGE_TAG
+          resources:
+            requests:
+              memory: "400Mi"
+              cpu: "100m"
+            limits:
+              memory: "500Mi"
+              cpu: "200m"
+          imagePullPolicy: Always
+          env:
+            - name: PROFILE
+              value: prod
+            - name: DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.datasource.url
+            - name: DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.datasource.username
+            - name: DATASOURCE_PSW
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.datasource.password
+            - name: DATASOURCE_DRIVER
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.datasource.driver
+            - name: DATASOURCE_MAX_POOL_SIZE
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.maximum-pool-size
+            - name: DATASOURCE_TYPE
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.type
+            - name: DATASOURCE_DATABASE_PLTATFORM
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.databasePlatform
+            - name: JPA_HIBERNATE_DDLAUTO
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.jpa.hibernate.ddlAuto
+            - name: TOMCAT_DEFAULT_AUTO_COMMIT
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.tomcat.defaultAutoCommit
+            - name: TOMCAT_INITIAL_SIZE
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.tomcat.initialSize
+            - name: TOMCAT_MAX_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.tomcat.maxActive
+            - name: TOMCAT_MAX_IDLE
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.tomcat.maxIdle
+            - name: TOMCAT_MAX_WAIT
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.tomcat.maxWait
+            - name: TOMCAT_MIN_IDLE
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.tomcat.minIdle
+            - name: JPA_SHOW_SQL
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: datasource.showSql
+            - name: VACACIONES_USERPOOL_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: cognito.vacaciones.user-pool-id
+            - name: KEYSECRET_SECURITY
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.seguridad.secretKey
+            - name: PREFIX_SECURITY
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.seguridad.prefix
+            - name: EXPIRA_DAYS_SECURITY
+              valueFrom:
+                secretKeyRef:
+                  name: vacaciones-secret
+                  key: vacaciones.seguridad.expiraInDays
+            - name: URL_MODULO_PERFIL
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: perfilServices.url
+            - name: URL_MODULO_CORREO
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: correoServices.url
+            - name: URL_MODULO_ADMINISTRARCATALOGO
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: administradorCatalogoServices.url
+            - name: URL_MODULO_SEGURIDAD
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: seguridadServices.url
+            - name: DOMINIO_VACACIONES
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: dominioVacaciones
+            - name: SUFIJO_FRONT_APROBAR
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: sufijoFrontAprobar
+            - name: SUFIJO_FRONT_VER_SOLICITADOS
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: sufijoFrontVerSolicitudes
+            - name: CORREO_APROBADOR_TITULO
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: tituloCorreoAprobador
+            - name: URL_FILES_API
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: archivosServices.url
+            - name: URL_ARCHIVOS_UTILITARIO
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: conversionArchivoServices.url
+            - name: SUFIJO_FRONT_RECHAZAR
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: sufijoFrontRechazar
+            - name: URL_MODULO_EXCEL
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: excelVacacionesServices.url
+            - name: CORREO_NOMINA
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: vacaciones.correoNomina
+            - name: CORREO_FACILITADOR
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: vacaciones.correoFacilitador
+            - name: CORREO_TESORERO
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: vacaciones.correoTesorero
+            - name: CORREO_CONTABILIDAD
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: vacaciones.correoContabilidad
+            - name: CORREO_DIRECTOR_TESORERIA
+              valueFrom:
+                configMapKeyRef:
+                  name: vacaciones-config
+                  key: vacaciones.correoDirectorTesoreria
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+  strategy:
+    type: Recreate
