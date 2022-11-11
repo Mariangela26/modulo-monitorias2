@@ -14,6 +14,6 @@ public interface ISeatPersistencePort {
 
     void updateSeat(Seat seat);
 
-    void  deleteSeat(Seat seat);
+    void  deleteSeat(Long seat);
 
 }

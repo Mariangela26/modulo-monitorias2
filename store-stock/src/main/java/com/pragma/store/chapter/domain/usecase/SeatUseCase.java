@@ -36,7 +36,7 @@ public class SeatUseCase implements ISeatServicePort {
     }
 
     @Override
-    public void deleteSeat(Seat seat) {
+    public void deleteSeat(Long seat) {
 
     }
 }
