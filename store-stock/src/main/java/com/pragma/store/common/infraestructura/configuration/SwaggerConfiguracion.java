@@ -19,7 +19,7 @@ import java.util.List;
 @Profile({"local", "dev", "prod"})
 public class SwaggerConfiguracion {
 
-    private static final String RUTA_PRINCIPAL = "com.pragma.plantilla";
+    private static final String RUTA_PRINCIPAL = "com.pragma.store";
     public static final String AUTHORIZATION_HEADER = "Authorization";
 
     @Bean

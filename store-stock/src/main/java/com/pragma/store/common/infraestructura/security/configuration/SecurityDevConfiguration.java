@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 
 @Configuration
-@Profile("none")
+@Profile("dev")
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityDevConfiguration extends WebSecurityConfigurerAdapter {

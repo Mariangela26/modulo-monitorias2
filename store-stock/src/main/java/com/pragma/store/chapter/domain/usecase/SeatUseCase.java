@@ -17,26 +17,26 @@ public class SeatUseCase implements ISeatServicePort {
 
     @Override
     public void saveSeat(Seat seat) {
-
+        seatPersistencePort.saveSeat(seat);
     }
 
     @Override
     public List<Seat> getAllSeat() {
-        return null;
+        return seatPersistencePort.getAllSeat();
     }
 
     @Override
     public Seat getSeat(Long seatId) {
-        return null;
+        return seatPersistencePort.getSeat(seatId);
     }
 
     @Override
     public void updateSeat(Seat seat) {
-
+        seatPersistencePort.updateSeat(seat);
     }
 
     @Override
-    public void deleteSeat(Long seat) {
-
+    public void deleteSeat(Long seatId) {
+        seatPersistencePort.deleteSeat(seatId);
     }
 }

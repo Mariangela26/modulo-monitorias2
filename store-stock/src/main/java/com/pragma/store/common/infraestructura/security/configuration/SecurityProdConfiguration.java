@@ -12,10 +12,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
-@Configuration
+/*@Configuration
 @Profile({"local", "dev", "prod"})
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)*/
 @RequiredArgsConstructor
 public class SecurityProdConfiguration extends WebSecurityConfigurerAdapter {
 
