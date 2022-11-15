@@ -16,7 +16,7 @@ public class UsersChapterFilterConsultTestDataBuilder {
     public static final long NUMBER_PAGES = 5;
     public static final boolean LAST_PAGE = false;
     public static final Long ACTUAL_PAGE = 1L;
-    public static final ObjectResponse<List<UsersChapterConsult>> DATA = new ObjectResponse<>(
+    /*public static final ObjectResponse<List<UsersChapterConsult>> DATA = new ObjectResponse<>(
             new ArrayList<UsersChapterConsult>());
 
     private long numberPages;
@@ -33,5 +33,5 @@ public class UsersChapterFilterConsultTestDataBuilder {
 
     public UsersChapterFilterConsult buildUsersChapterFilterConsult(){
         return new UsersChapterFilterConsult(this.numberPages, this.lastPage, this.actualPage, this.data);
-    }
+    }*/
 }

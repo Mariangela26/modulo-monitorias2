@@ -16,8 +16,9 @@ public class SeatUseCase implements ISeatServicePort {
 
 
     @Override
-    public void saveSeat(Seat seat) {
-        seatPersistencePort.saveSeat(seat);
+    public Seat saveSeat(Seat seat) {
+
+        return seatPersistencePort.saveSeat(seat);
     }
 
     @Override

@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class InfoSeniorityConsultTestDataBuilder {
-    public static final int CHAPTERID = 1;
+    /*public static final int CHAPTERID = 1;
     public static final String CHAPTER_NAME = "prueba";
     public static final int CHAPTER_TOTAL = 10;
     public static final Levels CHAPTER_TRAINEE = new Levels();
@@ -40,5 +40,5 @@ public class InfoSeniorityConsultTestDataBuilder {
     public InfoSenioritysConsult buildInfoSeniorityConsult(){
         return new InfoSenioritysConsult(this.id, this.chapterName, this.chapterTotal, this.chapterTrainee, this.chapterJunior,
                 this.chapterSenior, this.chapterAdvanced, this.chapterMaster);
-    }
+    }*/
 }
