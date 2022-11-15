@@ -21,9 +21,9 @@ public class SeatHandler implements ISeatHandler{
     private final SeatRequestMapper seatRequestMapper;
     private final SeatResponseMapper seatResponseMapper;
     @Override
-    public void saveSeat(SeatRequest seatRequest) {
-        Seat seat = seatRequestMapper.toSeat(seatRequest);
-        seatServicePort.saveSeat(seat);
+    public SeatResponse saveSeat(SeatRequest seatRequest) {
+        Seat seat = seatServicePort.saveSeat(seatRequestMapper.toSeat(seatRequest));
+        return seatResponseMapper.toResponse(seat);
     }
 
     @Override

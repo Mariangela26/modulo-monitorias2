@@ -18,8 +18,9 @@ public class SeatJpaAdapter implements ISeatPersistencePort {
     private final SeatEntityMapper seatEntityMapper;
 
     @Override
-    public void saveSeat(Seat seat) {
-        seatRepository.save(seatEntityMapper.toEntity(seat));
+    public Seat saveSeat(Seat seat) {
+        SeatEntity seatEntity = seatRepository.save(seatEntityMapper.toEntity(seat));
+        return seatEntityMapper.toSeat(seatEntity);
     }
 
     @Override
