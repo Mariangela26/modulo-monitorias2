@@ -9,7 +9,7 @@ import lombok.Setter;
 @Builder
 public class InfoSeniorityMonthConsultTestDataBuilder {
 
-    public static final int MONTH = 1;
+    /*public static final int MONTH = 1;
     public static final Levels CHAPTER_TRAINEE = new Levels();
     public static final Levels CHAPTER_JUNIOR = new Levels();
     public static final Levels CHAPTER_SENIOR = new Levels();
@@ -35,5 +35,5 @@ public class InfoSeniorityMonthConsultTestDataBuilder {
     public InfoSeniorityMonthConsult buildInfoSeniorityMonthConsult(){
         return new InfoSeniorityMonthConsult(this.month, this.chapterTrainee, this.chapterJunior, this.chapterSenior,
                 this.chapterAdvanced, this.chapterMaster);
-    }
+    }*/
 }

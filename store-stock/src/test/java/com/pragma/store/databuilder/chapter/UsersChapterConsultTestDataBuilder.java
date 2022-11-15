@@ -49,8 +49,8 @@ public class UsersChapterConsultTestDataBuilder {
         this.isExpired = IS_EXPIRED;
     }
 
-    public UsersChapterConsult buildUserChapterConsult(){
+    /*public UsersChapterConsult buildUserChapterConsult(){
         return new UsersChapterConsult(this.profilePicture, this.name, this.lastName, this.email, this.role, this.level,
                 this.project, this.nextValidationDate, this.isToday, this.isTomorrow, this.isExpired);
-    }
+    }*/
 }

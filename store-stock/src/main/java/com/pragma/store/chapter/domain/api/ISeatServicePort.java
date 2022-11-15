@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ISeatServicePort {
 
-    void saveSeat(Seat seat);
+    Seat saveSeat(Seat seat);
 
     List<Seat> getAllSeat();
 

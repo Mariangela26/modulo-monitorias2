@@ -27,8 +27,8 @@ public class UsersChapterFilterCommandTestDataBuilder {
         this.chapterId = CHAPTER_ID;
     }
 
-    public UsersChapterFilterCommand buildUsersChapterFilterCommand(){
+    /*public UsersChapterFilterCommand buildUsersChapterFilterCommand(){
         return new UsersChapterFilterCommand(this.pageNumber, this.totalElements,
                 this.assessmentDateAsc, this.chapterId);
-    }
+    }*/
 }

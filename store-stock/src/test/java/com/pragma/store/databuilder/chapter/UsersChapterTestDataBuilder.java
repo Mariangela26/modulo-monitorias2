@@ -31,8 +31,8 @@ public class UsersChapterTestDataBuilder {
         this.nextValidationDate = NEXT_VALIDATION_DATE;
     }
 
-    public UsersChapter buildUsersChapter(){
+    /*public UsersChapter buildUsersChapter(){
         return new UsersChapter(this.name, this.lastName, this.level, this.nextValidationDate);
-    }
+    }*/
 
 }

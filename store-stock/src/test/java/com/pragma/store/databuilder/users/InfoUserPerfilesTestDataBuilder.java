@@ -1,7 +1,6 @@
 package com.pragma.store.databuilder.users;
 
-import com.pragma.store.users.domain.model.InfoUserPerfiles;
-import com.pragma.store.users.domain.model.PerfilePhoto;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +13,7 @@ import java.util.List;
 @Builder
 public class InfoUserPerfilesTestDataBuilder {
 
-    public static final String IDENTIFICACION = "12323343545";
+    /*public static final String IDENTIFICACION = "12323343545";
     public static final String NOMBRE  = "nombre de prueba";
     public static final String APELLIDOS = "apellido de prueba";
     public static final String CORREO_EMPRESARIAL = "prueba.correo@pragma.com.co";
@@ -40,5 +39,5 @@ public class InfoUserPerfilesTestDataBuilder {
     public InfoUserPerfiles buildInfoUserPerfiles(){
         return new InfoUserPerfiles(this.identificacion, this.nombre, this.apellidos, this.correoEmpresarial,
                 this.cargo, this.fotografias);
-    }
+    }*/
 }

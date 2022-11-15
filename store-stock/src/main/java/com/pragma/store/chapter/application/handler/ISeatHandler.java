@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ISeatHandler {
 
-    void saveSeat(SeatRequest seatRequest);
+    SeatResponse saveSeat(SeatRequest seatRequest);
 
     List<SeatResponse> getAllSeat();
 

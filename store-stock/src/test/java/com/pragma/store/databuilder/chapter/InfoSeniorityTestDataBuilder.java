@@ -9,7 +9,7 @@ import lombok.Setter;
 @Builder
 public class InfoSeniorityTestDataBuilder {
 
-    public static final Long CHAPTERID = 1L;
+    /*public static final Long CHAPTERID = 1L;
     public static final String CHAPTER_NAME = "prueba";
     public static final int CHAPTER_TOTAL = 10;
     public static final Levels CHAPTER_TRAINEE = new Levels();
@@ -41,5 +41,5 @@ public class InfoSeniorityTestDataBuilder {
     public InfoSenioritys buildInfoSenioritys(){
         return new InfoSenioritys(this.id, this.chapterName, this.chapterTotal, this.chapterTrainee, this.chapterJunior,
                 this.chapterSenior, this.chapterAdvanced, this.chapterMaster);
-    }
+    }*/
 }
