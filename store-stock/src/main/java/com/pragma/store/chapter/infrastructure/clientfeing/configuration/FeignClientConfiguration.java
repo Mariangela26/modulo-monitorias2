@@ -1,4 +1,4 @@
-package com.pragma.store.chapter.infrastructure.clientfeing;
+package com.pragma.store.chapter.infrastructure.clientfeing.configuration;
 
 import com.pragma.store.common.infraestructura.interceptor.HttpRequestContextHolder;
 import feign.RequestInterceptor;
