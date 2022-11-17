@@ -6,15 +6,15 @@ public class Supply {
     private Long id;
     private Date date;
     private Seat seat;
-    private Dispatcher employee;
+    private Dispatcher dispatcher;
     private Provider provider;
     private ProductSupply[] productSupplies;
 
-    public Supply(Long id, Date date, Seat seat, Dispatcher employee, Provider provider, ProductSupply[] productSupplies) {
+    public Supply(Long id, Date date, Seat seat, Dispatcher dispatcher, Provider provider, ProductSupply[] productSupplies) {
         this.id = id;
         this.date = date;
         this.seat = seat;
-        this.employee = employee;
+        this.dispatcher = dispatcher;
         this.provider = provider;
         this.productSupplies = productSupplies;
     }
@@ -43,12 +43,12 @@ public class Supply {
         this.seat = seat;
     }
 
-    public Dispatcher getEmployee() {
-        return employee;
+    public Dispatcher getDispatcher() {
+        return dispatcher;
     }
 
-    public void setEmployee(Dispatcher employee) {
-        this.employee = employee;
+    public void setDispatcher(Dispatcher dispatcher) {
+        this.dispatcher = dispatcher;
     }
 
     public Provider getProvider() {

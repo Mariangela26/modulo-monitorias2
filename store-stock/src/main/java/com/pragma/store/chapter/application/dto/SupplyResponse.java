@@ -11,6 +11,6 @@ public class SupplyResponse {
     private Date date;
     private SeatDto seat;
     private ProviderDto provider;
-    private EmployeeDto employee;
+    private DispatcherDto dispatcher;
     //mapear employee despues
 }

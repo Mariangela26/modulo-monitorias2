@@ -9,6 +9,6 @@ public interface IPersonClientPersistencePort {
     Provider getProvider(Long providerId);
     List<Provider> getAllProvider();
 
-    Dispatcher getEmployee(Long providerId);
+    Dispatcher getDispatcher(Long dispatcherId);
     List<Dispatcher> getAllDispatcher();
 }

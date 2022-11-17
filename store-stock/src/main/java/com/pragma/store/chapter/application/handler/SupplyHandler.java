@@ -5,7 +5,6 @@ import com.pragma.store.chapter.application.mapper.*;
 import com.pragma.store.chapter.domain.api.IPersonClientServicePort;
 import com.pragma.store.chapter.domain.api.ISeatServicePort;
 import com.pragma.store.chapter.domain.api.ISupplyServicePort;
-import com.pragma.store.chapter.domain.model.Seat;
 import com.pragma.store.chapter.domain.model.Supply;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,7 @@ public class SupplyHandler implements ISupplyHandler {
     private final SupplyRequestMapper supplyRequestMapper;
     private final SupplyResponseMapper supplyResponseMapper;
     private final SeatDtoMapper seatDtoMapper;
-    private final EmployeeDtoMapper employeeDtoMapper;
+    private final DispatcherDtoMapper dispatcherDtoMapper;
     private final ProviderDtoMapper providerDtoMapper;
 
     //clients
@@ -35,10 +34,10 @@ public class SupplyHandler implements ISupplyHandler {
     public SupplyResponse saveSupply(SupplyRequest supplyRequest) {
         SeatDto seatDto = seatDtoMapper.toDto(seatServicePort.getSeat(supplyRequest.getSeatId()));
         ProviderDto providerDto = providerDtoMapper.toDto(personClientServicePort.getProvider(supplyRequest.getProviderId()));
-        EmployeeDto employeeDto = employeeDtoMapper.toDto(personClientServicePort.getEmployee(supplyRequest.getEmployeeId()));
+        DispatcherDto dispatcherDto = dispatcherDtoMapper.toDto(personClientServicePort.getDispatcher(supplyRequest.getDispatcherId()));
 
         Supply supply = supplyServicePort.saveSupply(supplyRequestMapper.toSupply(supplyRequest));
-        return supplyResponseMapper.toResponse(supply, seatDto, providerDto, employeeDto);
+        return supplyResponseMapper.toResponse(supply, seatDto, providerDto, dispatcherDto);
     }
 
     @Override
@@ -54,7 +53,7 @@ public class SupplyHandler implements ISupplyHandler {
                 supply,
                 seatDtoMapper.toDto(seatServicePort.getSeat(supply.getSeat().getId())),
                 providerDtoMapper.toDto(personClientServicePort.getProvider(supply.getProvider().getId())),
-                employeeDtoMapper.toDto(personClientServicePort.getEmployee(supply.getEmployee().getId()))
+                dispatcherDtoMapper.toDto(personClientServicePort.getDispatcher(supply.getDispatcher().getId()))
         );
     }
 
