@@ -3,13 +3,13 @@ package com.pragma.store.chapter.domain.model;
 public class ProductSupply {
     private Long id;
     private Long productId;
-    private Long providerId;
+    private Long supplyId;
     private Long quantity;
 
-    public ProductSupply(Long id, Long productId, Long providerId, Long quantity) {
+    public ProductSupply(Long id, Long productId, Long supplyId, Long quantity) {
         this.id = id;
         this.productId = productId;
-        this.providerId = providerId;
+        this.supplyId = supplyId;
         this.quantity = quantity;
     }
 
@@ -29,12 +29,12 @@ public class ProductSupply {
         this.productId = productId;
     }
 
-    public Long getProviderId() {
-        return providerId;
+    public Long getSupplyId() {
+        return supplyId;
     }
 
-    public void setProviderId(Long providerId) {
-        this.providerId = providerId;
+    public void setSupplyId(Long supplyId) {
+        this.supplyId = supplyId;
     }
 
     public Long getQuantity() {

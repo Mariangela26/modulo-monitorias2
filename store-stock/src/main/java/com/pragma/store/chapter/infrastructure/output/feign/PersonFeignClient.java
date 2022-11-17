@@ -2,8 +2,6 @@ package com.pragma.store.chapter.infrastructure.output.feign;
 
 import com.pragma.store.chapter.application.dto.DispatcherResponse;
 import com.pragma.store.chapter.application.dto.ProviderResponse;
-import com.pragma.store.chapter.domain.model.Dispatcher;
-import com.pragma.store.chapter.domain.model.Provider;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
