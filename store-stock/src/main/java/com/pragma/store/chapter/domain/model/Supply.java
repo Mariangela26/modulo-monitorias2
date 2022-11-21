@@ -1,21 +1,25 @@
 package com.pragma.store.chapter.domain.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Supply {
     private Long id;
     private Date date;
-    private Seat seat;
-    private Dispatcher dispatcher;
-    private Provider provider;
-    private ProductSupply[] productSupplies;
+    //private Seat seat;
+    private Long seatId;
+    private Long dispatcherId;
+    private Long providerId;
+    //private Dispatcher dispatcher;
+    //private Provider provider;
+    private List<ProductSupply> productSupplies;
 
-    public Supply(Long id, Date date, Seat seat, Dispatcher dispatcher, Provider provider, ProductSupply[] productSupplies) {
+    public Supply(Long id, Date date, Long seatId, Long dispatcherId, Long providerId, List<ProductSupply> productSupplies) {
         this.id = id;
         this.date = date;
-        this.seat = seat;
-        this.dispatcher = dispatcher;
-        this.provider = provider;
+        this.seatId = seatId;
+        this.dispatcherId = dispatcherId;
+        this.providerId = providerId;
         this.productSupplies = productSupplies;
     }
 
@@ -35,35 +39,35 @@ public class Supply {
         this.date = date;
     }
 
-    public Seat getSeat() {
-        return seat;
+    public Long getSeatId() {
+        return seatId;
     }
 
-    public void setSeat(Seat seat) {
-        this.seat = seat;
+    public void setSeatId(Long seatId) {
+        this.seatId = seatId;
     }
 
-    public Dispatcher getDispatcher() {
-        return dispatcher;
+    public Long getDispatcherId() {
+        return dispatcherId;
     }
 
-    public void setDispatcher(Dispatcher dispatcher) {
-        this.dispatcher = dispatcher;
+    public void setDispatcherId(Long dispatcherId) {
+        this.dispatcherId = dispatcherId;
     }
 
-    public Provider getProvider() {
-        return provider;
+    public Long getProviderId() {
+        return providerId;
     }
 
-    public void setProvider(Provider provider) {
-        this.provider = provider;
+    public void setProviderId(Long providerId) {
+        this.providerId = providerId;
     }
 
-    public ProductSupply[] getProductSupplies() {
+    public List<ProductSupply> getProductSupplies() {
         return productSupplies;
     }
 
-    public void setProductSupplies(ProductSupply[] productSupplies) {
+    public void setProductSupplies(List<ProductSupply> productSupplies) {
         this.productSupplies = productSupplies;
     }
 }

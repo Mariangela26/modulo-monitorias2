@@ -4,23 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name="seat")
+@Table(name="product_supply")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class SeatEntity {
-
+public class ProductSupplyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    String name;
-    String address;
+    private Long quantity;
+    private Long productId;
 
-    @OneToMany(mappedBy = "seat", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<SupplyEntity> supplies;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "supplyId")
+    private SupplyEntity supply;
 }

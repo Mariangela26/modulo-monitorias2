@@ -1,7 +1,5 @@
 package com.pragma.store.chapter.infrastructure.output.feign;
 
-import com.pragma.store.chapter.application.dto.DispatcherResponse;
-import com.pragma.store.chapter.application.dto.ProviderResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,10 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "store-person", url = "localhost:8080")
+//@FeignClient(name = "store-person", url = "localhost:8080")
 public interface PersonFeignClient {
 
-    @GetMapping("/provider")
+    /*@GetMapping("/provider")
     public ResponseEntity<List<ProviderResponse>> getAllProvider();
 
     @GetMapping("/provider/{providerId}")
@@ -23,4 +21,6 @@ public interface PersonFeignClient {
 
     @GetMapping("/dispatcher/{dispatcherId}")
     public ResponseEntity<DispatcherResponse> getDispatcher(@PathVariable Long dispatcherId);
+    */
 }
+

@@ -12,6 +12,7 @@ import org.mapstruct.ReportingPolicy;
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface SupplyRequestMapper {
 
+    //faltaria mappear el id
     Supply toSupply(SupplyRequest supplyRequest);
 
     //@Mapping(source = "supplyRequest.")
