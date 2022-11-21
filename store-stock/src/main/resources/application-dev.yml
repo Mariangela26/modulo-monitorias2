@@ -1,6 +1,6 @@
 server:
 #aqui se debe cambiar el puerto, por el especifico de cada micro
-  port: 8080
+  port: 8081
 
 spring:
   datasource:
