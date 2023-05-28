@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  title: Microservicio modulo-monitorias
+  description: |-
+    Este modulo maneja los procesos del modulo de monitorias de la universidad Simón Bolivar
+  version: 1.0.0
+servers:
+- url: https://monitoring.module/v1
+paths:
+  /course:
+    post:
+      tags:
+      - Post course
+      summary: Inserta la información de un nuevo curso a la BD
+      responses:
+        '201':
+          description: OK
+    get:
+      tags:
+        - Get courses
+      summary: Obtiene la informacion de todos los cursos
+      responses:
+        '201':
+          description: OK
+  /course/{courseId}:
+    get:
+      tags: 
+      - Get a course
+      summary: Obtiene la informacion de un curso en especifico
+      parameters: 
+        - name: courseId
+          in: path
+          description: Id del curso a obtener
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201':
+          description: OK
+    put:
+      tags: 
+      - Put a course
+      summary: Actualiza la informacion de un curso en especifico
+      parameters: 
+        - name: courseId
+          in: path
+          description: Id del curso a actualizar
+          required: true
+          schema: 
+            type: string
+      responses:
+        '204':
+          description: course updated
+    delete:
+      tags: 
+      - Delete a course
+      summary: Elimina la informacion de un curso en especifico
+      parameters: 
+        - name: courseId
+          in: path
+          description: Id del curso a eliminar
+          required: true
+          schema: 
+            type: string
+      responses:
+        '204':
+          description: course deleted
+  /instructor:
+    post:
+      tags:
+      - Post instructor
+      summary: Inserta la información de un nuevo monitor a la BD
+      responses:
+        '201':
+          description: OK
+    get:
+      tags:
+      - Get instructors
+      summary: Obtiene la informacion de todos los monitores
+      responses:
+        '201':
+          description: OK
+  /instructor/{instructorId}:
+    get:
+      tags: 
+      - Get an instructor
+      summary: Obtiene la informacion de un monitor en especifico
+      parameters: 
+        - name: instructorId
+          in: path
+          description: Id del monitor a obtener
+          required: true
+          schema: 
+            type: string
+      responses:
+        '201':
+          description: OK
+    delete:
+      tags:
+        - Delete an instructor
+      summary: Elimina la informacion de un instructor en especifico
+      parameters:
+        - name: instructorId
+          in: path
+          description: Id del instructor a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: instructor deleted
+    put:
+      tags:
+        - Put a instructor
+      summary: Actualiza la informacion de un instructor en especifico
+      parameters:
+        - name: instructorId
+          in: path
+          description: Id del instructor a actualizar
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: instructor updated
+  /schedule:
+    post:
+      tags:
+        - Post schedule
+      summary: Inserta la información de un nuevo horario a la BD
+      responses:
+        '201':
+          description: OK
+    get:
+      tags:
+        - Get schedules
+      summary: Obtiene la informacion de todos los horarios
+      responses:
+        '201':
+          description: OK
+  /schedule/{scheduleId}:
+    get:
+      tags:
+        - Get a schedule
+      summary: Obtiene la informacion de un horario en especifico
+      parameters:
+        - name: instructorId
+          in: path
+          description: Id del monitor a obtener
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: OK
+    delete:
+      tags:
+        - Delete an instructor
+      summary: Elimina la informacion de un instructor en especifico
+      parameters:
+        - name: instructorId
+          in: path
+          description: Id del instructor a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: instructor deleted
+    put:
+      tags:
+        - Put a instructor
+      summary: Actualiza la informacion de un instructor en especifico
+      parameters:
+        - name: instructorId
+          in: path
+          description: Id del instructor a actualizar
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: instructor updated
+          

@@ -5,7 +5,7 @@ plugins {
     id 'jacoco'
 }
 
-group 'com.pragma.personas'
+group 'com.pragma.store'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = '11'
